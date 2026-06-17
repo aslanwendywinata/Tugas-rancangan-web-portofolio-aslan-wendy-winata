@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - Portofolio Masa Depan Modern Minimalis</title>
+
+    <!-- Google Font Premium agar teks terlihat bersih dan profesional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           REBRANDING TOTAL WARNA (MODERN MINIMALIST)
+           ========================================== */
+        :root {
+            --warna-banner: #1e293b;
+            /* Deep Slate / Charcoal (Sangat Elit & Lembut) */
+            --warna-menu: #f1f5f9;
+            /* Light Gray (Bersih dan Kontras) */
+            --warna-konten: #ffffff;
+            /* Putih Bersih (Sangat nyaman membaca teks hitam) */
+            --warna-footer: #0f172a;
+            /* Dark Navy / Ink (Memberikan kesan penutup yang kuat) */
+            --warna-aksen: #3b82f6;
+            /* Electric Blue (Untuk hover / penanda aktif) */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            /* Background luar diganti ke warna abu-abu studio yang minimalis */
+            background: #e2e8f0;
+            min-height: 100vh;
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Utama Lebar 80% Rata Tengah */
+        .main-container {
+            width: 80%;
+            max-width: 1100px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+            /* Bayangan modern yang halus */
+            border: 1px solid #cbd5e1;
+        }
+
+        /* ==========================================
+           BANNER ATAS (Deep Slate)
+           ========================================== */
+        .banner-header {
+            background-color: var(--warna-banner);
+            color: #ffffff;
+            padding: 65px 30px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .banner-header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================
+           BAGIAN TENGAH (FLEXBOX)
+           ========================================== */
+        .content-wrapper {
+            display: flex;
+            min-height: 480px;
+            background-color: var(--warna-konten);
+        }
+
+        /* SIDEBAR MENU (Light Gray) */
+        .sidebar {
+            background-color: var(--warna-menu);
+            width: 30%;
+            padding: 50px 30px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .sidebar ul {
+            list-style-type: square;
+            /* Sesuai mockup asli */
+            padding-left: 20px;
+            color: var(--warna-aksen);
+            /* Warna bullet point menjadi biru */
+        }
+
+        .sidebar ul li {
+            margin-bottom: 24px;
+        }
+
+        .sidebar ul li a {
+            color: #475569;
+            /* Warna teks menu abu-abu gelap profesional */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        /* Efek saat menu disorot kursor */
+        .sidebar ul li a:hover {
+            color: var(--warna-aksen);
+            transform: translateX(6px);
+        }
+
+        /* KONTEN UTAMA (Putih Bersih dengan Teks Gelap) */
+        .main-content {
+            background-color: var(--warna-konten);
+            color: #334155;
+            /* Teks berwarna gelap agar sangat mudah dibaca */
+            width: 70%;
+            padding: 50px;
+            position: relative;
+        }
+
+        /* ==========================================
+           SISTEM PINDAH HALAMAN MURNI CSS (:target)
+           ========================================== */
+        .page-content {
+            display: none;
+            animation: transisiHalaman 0.35s ease-out;
+        }
+
+        #profil,
+        .page-content:target {
+            display: block;
+        }
+
+        :target~#profil {
+            display: none;
+        }
+
+        @keyframes transisiHalaman {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Desain Gaya Teks Dalam Konten */
+        .page-content h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--warna-banner);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .page-content p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            text-align: justify;
+            color: #475569;
+        }
+
+        .page-content ul {
+            padding-left: 20px;
+        }
+
+        .page-content ul li {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+            color: #475569;
+        }
+
+        .page-content strong {
+            color: #1e293b;
+        }
+
+        /* ==========================================
+           FOOTER / MOTTO (Dark Navy)
+           ========================================== */
+        .motto-footer {
+            background-color: var(--warna-footer);
+            color: #94a3b8;
+            /* Teks footer abu-abu terang yang elegan */
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: italic;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- HEADER / BANNER -->
+        <header class="banner-header">
+            <h1>Proyeksi Portofolio Masa Depan (Tahun 2031)</h1>
+        </header>
+
+        <!-- WRAPPER TENGAH -->
+        <div class="content-wrapper">
+
+            <!-- SIDEBAR MENUNYA -->
+            <aside class="sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#profil">Profil</a></li>
+                        <li><a href="#pendidikan">Riwayat Pendidikan</a></li>
+                        <li><a href="#organisasi">Riwayat Organisasi</a></li>
+                        <li><a href="#pekerjaan">Riwayat Pekerjaan</a></li>
+                        <li><a href="#karya">Karya Tulis/Produk</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main-content">
+
+                <div id="pendidikan" class="page-content">
+                    <h2>Riwayat Pendidikan (Target 2031)</h2>
+                    <ul>
+                        <li>
+                            <strong>Magister Ilmu Komputer (S2)</strong><br>
+                            Universitas Indonesia (Target Lulus: 2029)<br>
+                            <em>Fokus Riset: Implementasi Artificial Intelligence dalam Arsitektur Big Data.</em>
+                        </li>
+                        <li>
+                            <strong>Sarjana Sistem Informasi (S1)</strong><br>
+                            Universitas Jambi (Lulus: 2026)<br>
+                            <em>Predikat Cum Laude dengan fokus pada Manajemen Sistem Basis Data (DDL/DML).</em>
+                        </li>
+                    </ul>
+                </div>
+                <div id="organisasi" class="page-content">
+                    <h2>Riwayat Organisasi</h2>
+                    <ul>
+                        <li>
+                            <strong>Ketua Himpunan Mahasiswa Sistem Informasi (HIMASI)</strong><br>
+                            Periode 2024 - 2025<br>
+                            <em>Memimpin manajemen organisasi mahasiswa dan sukses menginisiasi Tech-Expo regional.</em>
+                        </li>
+                        <li>
+                            <strong>Core Team - Google Developer Student Clubs (GDSC)</strong><br>
+                            Periode 2023 - 2026<br>
+                            <em>Berkontribusi aktif sebagai pemateri dalam workshop pemrograman web dan basis data
+                                tingkat dasar.</em>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pekerjaan" class="page-content">
+                    <h2>Riwayat Pekerjaan (Proyeksi 5 Tahun)</h2>
+                    <ul>
+                        <li>
+                            <strong>Chief Executive Officer (CEO) & Co-Founder</strong><br>
+                            TechFuture Solution Corp (2029 - Sekarang)<br>
+                            <em>Memimpin arah strategis startup dalam menyediakan platform otomasi data berbasis awan
+                                (cloud).</em>
+                        </li>
+                        <li>
+                            <strong>Senior Software Architect</strong><br>
+                            Global Tech Enterprise IT (2026 - 2029)<br>
+                            <em>Bertanggung jawab membangun struktur manajemen basis data tangguh untuk klien korporat
+                                berskala besar.</em>
+                        </li>
+                    </ul>
+                </div>
+                <div id="karya" class="page-content">
+                    <h2>Karya Tulis & Produk Inovasi</h2>
+                    <ul>
+                        <li>
+                            <strong>Aplikasi "Smart-Data Analytics" (Produk)</strong><br>
+                            Platform berbasis Cloud SaaS cerdas untuk mempermudah UMKM menganalisis pertumbuhan bisnis
+                            lewat visualisasi grafik interaktif.
+                        </li>
+                        <li>
+                            <strong>Publikasi Jurnal Ilmiah Internasional (Karya Tulis)</strong><br>
+                            <em>"Optimizing DDL and DML Execution in High-Traffic Distributed Database Systems"</em>
+                            (Diterbitkan pada tahun 2028).
+                        </li>
+                    </ul>
+                </div>
+                <div id="profil" class="page-content">
+                    <h2>Profil Diri (Proyeksi Masa Depan)</h2>
+                    <p>Nama saya Aslan wendy winata saya adalah lulusan Sarjana Sistem Informasi yang berdedikasi tinggi
+                        dan berfokus pada pengembangan ekosistem teknologi cerdas. Dalam kurun waktu lima tahun ke
+                        depan, saya memproyeksikan diri sebagai seorang ahli di bidang tata kelola data dan arsitektur
+                        sistem yang handal.</p>
+                    <p>Dengan mengombinasikan keahlian manajerial serta teknis, visi saya adalah membangun startup
+                        teknologi mandiri yang mampu menyediakan solusi otomasi guna mendorong efisiensi industri
+                        digital nasional secara nyata.</p>
+                </div>
+
+            </main>
+
+        </div>
+        <footer class="motto-footer">
+            <p>"Pendidikan adalah tiket ke masa depan, hari esok dimiliki oleh orang-orang yang mempersiapkan dirinya
+                sejak hari ini."</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
